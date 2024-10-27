@@ -47,3 +47,11 @@ function mostrarTotalEstacionamiento(costo) {
 
 function sistemaEstacionamiento() {
     iniciarSesion();
+
+     if (usuarioActual) {
+        let continuar = true;
+
+        while (continuar) {
+            const horasEstacionadas = capturarHorasEstacionamiento();
+            const costo = calcularCostoEstacionamiento(horasEstacionadas);
+            mostrarTotalEstacionamiento(costo);
