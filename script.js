@@ -55,3 +55,8 @@ function sistemaEstacionamiento() {
             const horasEstacionadas = capturarHorasEstacionamiento();
             const costo = calcularCostoEstacionamiento(horasEstacionadas);
             mostrarTotalEstacionamiento(costo);
+
+                    continuar = confirm("¿Desea calcular el costo para otro vehículo?");
+        }
+    }
+}
