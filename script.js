@@ -28,3 +28,22 @@ function capturarHorasEstacionamiento() {
     const fechaSalida = new Date(2023, 0, 1, horasSalida, minutosSalida);
 
     return (fechaSalida - fechaEntrada) / (1000 * 60 * 60);
+
+    function calcularCostoEstacionamiento(horas) {
+    let costo;
+    if (horas < 2) {
+        costo = horas * 3000;
+    } else if (horas <= 5) {
+        costo = horas * 2500;
+    } else {
+        costo = horas * 2000;
+    }
+    return costo;
+}
+
+function mostrarTotalEstacionamiento(costo) {
+    alert(`El costo total del estacionamiento es: $${costo}`);
+}
+
+function sistemaEstacionamiento() {
+    iniciarSesion();
