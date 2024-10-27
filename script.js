@@ -16,3 +16,15 @@ function iniciarSesion() {
     alert("Usuario o contraseña incorrectos.");
   }
 }
+
+function capturarHorasEstacionamiento() {
+    const horaEntrada = prompt("Ingrese la hora de entrada (HH:MM):");
+    const horaSalida = prompt("Ingrese la hora de salida (HH:MM):");
+
+    const [horasEntrada, minutosEntrada] = horaEntrada.split(':').map(Number);
+    const [horasSalida, minutosSalida] = horaSalida.split(':').map(Number);
+
+    const fechaEntrada = new Date(2023, 0, 1, horasEntrada, minutosEntrada);
+    const fechaSalida = new Date(2023, 0, 1, horasSalida, minutosSalida);
+
+    return (fechaSalida - fechaEntrada) / (1000 * 60 * 60);
